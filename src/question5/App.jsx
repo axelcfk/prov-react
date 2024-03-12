@@ -26,13 +26,10 @@
 import Panel from "./Panel";
 
 function App() {
-  
-
   return (
     <div>
       <Panel title="Panel 1" collapsible={true}>
         <p>Det här är innehållet i panel 1. Det kan kollapsas.</p>{" "}
-        {/* om collapsible är true så visas children och en knapp som kan kollapsa innehållet. annars visas inte children men en knapp "EXPAND"*/}
       </Panel>
       <Panel title="Panel 2">
         <p>Det här är innehållet i panel 2 och kan inte kollapsas.</p>

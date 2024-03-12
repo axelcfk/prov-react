@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Panel({ children, title, collapsible }) {
-  const [isCollapsible, setIsCollapsible] = useState(true);
+  const [isCollapsible, setIsCollapsible] = useState(collapsible);
 
   function setCollapsible() {
     setIsCollapsible(!isCollapsible);
@@ -13,11 +13,13 @@ export default function Panel({ children, title, collapsible }) {
     <div>
       <h1>{title}</h1>
 
-      {isCollapsible ? <div> {children}</div> : null}
-      {isCollapsible ? (
+      {isCollapsible && title == "Panel 1" ? <div> {children}</div> : null}
+      {isCollapsible && title == "Panel 1" ? (
         <button onClick={setCollapsible}>Visa mindre</button>
       ) : (
-        <button onClick={setCollapsible}>Visa mer</button>
+        <>
+          <button onClick={setCollapsible}>Visa mer</button>
+        </>
       )}
     </div>
   );
